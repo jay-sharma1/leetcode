@@ -1,12 +1,13 @@
-def containsDuplicate(nums: List[int]) -> bool:
-    final_set = set()
-
-    # Initialize and add all numbers in nums to the set.
-    for i in nums:
-        final_set.add(i)
-
-    # If the length of the set is smaller than of the original list, there must be duplicates.
-    if len(final_set) < len(nums):
-        return True
-    else:
+# Add all elements to the set (which doesn't allow duplicates), if the length of the set is the same as the original array then there are no dupes.
+def containsDuplicate(nums: list[int]) -> bool:
+    HashSet = set()
+    
+    for num in nums:
+        HashSet.add(num)
+    
+    if len(HashSet) == len(nums):
         return False
+    else:
+        return True
+
+print(containsDuplicate([1,2,3,1]))
